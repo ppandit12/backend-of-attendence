@@ -19,7 +19,7 @@ const server = http.createServer(app);
 
 // Middleware
 app.use(cors({
-  origin: ['https://frontend-of-attendence.vercel.app', 'http://localhost:5173', 'http://localhost:3000'],
+  origin: ['https://frontend-of-attendence.vercel.app', 'https://attendance.pawanpandit.com', 'http://localhost:5173', 'http://localhost:3000'],
   credentials: true
 }));
 app.use(express.json());
