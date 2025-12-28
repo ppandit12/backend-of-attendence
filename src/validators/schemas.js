@@ -13,6 +13,21 @@ const loginSchema = z.object({
   password: z.string()
 });
 
+const forgotPasswordSchema = z.object({
+  email: z.string().email()
+});
+
+const verifyOtpSchema = z.object({
+  email: z.string().email(),
+  otp: z.string().length(6)
+});
+
+const resetPasswordSchema = z.object({
+  email: z.string().email(),
+  otp: z.string().length(6),
+  newPassword: z.string().min(6)
+});
+
 // Class schemas
 const createClassSchema = z.object({
   className: z.string().min(1)
@@ -48,5 +63,8 @@ module.exports = {
   createClassSchema,
   addStudentSchema,
   startAttendanceSchema,
+  forgotPasswordSchema,
+  verifyOtpSchema,
+  resetPasswordSchema,
   validate
 };

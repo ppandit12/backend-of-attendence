@@ -22,6 +22,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['teacher', 'student'],
     required: true
+  },
+  otp: {
+    type: String
+  },
+  otpExpires: {
+    type: Date
   }
 }, {
   timestamps: true
