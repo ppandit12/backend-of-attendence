@@ -21,6 +21,15 @@ const server = http.createServer(app);
 app.use(cors());
 app.use(express.json());
 
+// Health check route
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Attendance System API is running!',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Routes
 app.use('/auth', authRoutes);
 app.use('/class', classRoutes);
